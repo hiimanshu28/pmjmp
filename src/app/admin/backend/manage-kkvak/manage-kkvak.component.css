@@ -1,0 +1,22 @@
+#newsimg{
+    height:300px;
+    width: 400px;
+}
+.hidden{
+    display: none;
+}
+.newsimgsm{
+    height:90px;
+    width:120px;
+}
+#videoimg{
+    height:300px;
+    width: 400px;
+}
+.hidden{
+    display: none;
+}
+.videoimgsm{
+    height:360px;
+    width:640px;
+}

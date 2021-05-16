@@ -1,0 +1,82 @@
+h3{
+    margin:0;
+}
+h5{
+    background-color: rgb(254, 0, 0);
+    color: white;
+    border-radius: 50px;
+    margin-top: 1.5rem;
+}
+.membership{
+    background-color: #0076C0;
+    color: white;
+    border-radius: 4px;
+}
+.heading{
+    text-shadow: 2px 2px 12px black;
+}
+.bronze{
+    background-image: url(../../../assets/bronze.jpg);
+    color: rgb(255, 236, 128);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+.silver{
+    background-image: url(../../../assets/silver.jpg);
+    color: rgb(38, 42, 68);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+.gold{
+    background-image: url(../../../assets/gold.jpg);
+    color: rgb(112, 77, 0);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.heading{
+    background-color: #D86D35;
+    color:white;
+}
+.flb{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profilepic{
+    height: 200px;
+    width: 200px;
+}
+.profileImg{
+    display: flex;
+    padding: 0;
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    align-items: center;
+    cursor: pointer;
+}
+.imgtext{
+    width:100%;
+    cursor: pointer;
+    text-align: center;
+}
+.hidden{
+    display:none;
+}
+.formstyl{
+    border: 1px solid black;
+    border-radius: 4px;
+    width:80%;
+    padding:0.5rem;
+    margin:0.5rem;
+    font-weight: bolder;
+    font-size: 1rem;
+}
+.heightstyl{
+    margin-left: auto;
+    margin-right: auto;
+}

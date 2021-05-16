@@ -1,0 +1,61 @@
+<div class="row justify-content-around">
+    <div class="col-md-6 col-sm-8 col-xs-11">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center heading" style="background-color: #D86D35; color: white;">VIDEOS</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="mat-elevation-z8">
+                    <table style="width: 100%;" mat-table [dataSource]="dataSource1" class="mat-elevation-z8">
+                        <ng-container matColumnDef="image">
+                            <td mat-cell *matCellDef="let element" class="text-center">
+                                <div>
+                                    <iframe class="videos" [src]="element.payload.doc.data().vidurl | safe" allowfullscreen></iframe>
+                                </div>
+                            </td>
+                        </ng-container>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                    <mat-paginator #vid [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-8 col-xs-11">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center heading" style="background-color: #D86D35; color: white;">KARYAKARNI VAKTAVYA</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="mat-elevation-z8">
+                    <!-- <table style="width: 100%;" mat-table [dataSource]="dataSource2" class="mat-elevation-z8">
+                        <ng-container matColumnDef="title">
+                            <td mat-cell *matCellDef="let element" class="text-center">
+                                <div class="newshover" (click)="goFullKkvk(element.payload.doc.id)">
+                                    <h2>{{element.payload.doc.data().title}}</h2> by <h4>{{element.payload.doc.data().author}}</h4>
+                                </div>
+                            </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+                    </table> -->
+                    <table style="width: 100%;" mat-table [dataSource]="dataSource2" class="mat-elevation-z8">
+                        <ng-container matColumnDef="title">
+                            <td mat-cell *matCellDef="let element">
+                                <div class="text-center newshover" (click)='goFullKkvk(element.payload.doc.id)'>
+                                    <h4>{{element.payload.doc.data().title}}</h4> by <h6>{{element.payload.doc.data().author}}</h6>
+                                </div>
+                            </td>
+                        </ng-container>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+                    </table>
+                    <mat-paginator #vak [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

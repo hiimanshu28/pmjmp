@@ -1,0 +1,19 @@
+<div class="row mat-elevation-z8">
+    <div class="col-12 pt-2" style="background-color: #D86D35; color: white;">
+        <h1 class="text-center">VIDEOS</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <mat-grid-list [cols]="cols" rowHeight='320px'>
+            <mat-grid-tile *ngFor='let video of videos' colspan='1' rowspan='1'>
+                <mat-card class="picbackground">
+                    <mat-card-content>
+                        <h4 style="color: white;">{{video.payload.doc.data().title}}</h4>
+                        <iframe class="videoss" [src]="video.payload.doc.data().vidurl | safe" allowfullscreen></iframe>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

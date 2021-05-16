@@ -1,0 +1,188 @@
+<div class="row justify-content-center mt-3">
+    <div class="col-md-10 col-xs-12">
+        <div class="row mat-elevation-z8 mt-3">
+            <div class="col-12 pt-2" style="background-color: #D86D35; color: white;">
+                <h1 class="text-center">ZONAL BODY</h1>
+            </div>
+        </div>
+        
+        <div class="row mt-3">
+            <div class="col-12 mat-elevation-z8 memberblock">
+                <div class="row">
+                    <div class="col-12 orangebar">
+                        <h3 class="text-center whitetext">PRESIDENT</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 pt-2">
+                        <mat-grid-list [cols]="cols" rowHeight='300px'>
+                            <mat-grid-tile *ngFor='let member of President' colspan='1' rowspan='1'>
+                                <mat-card class="example-card text-center mat-elevation-z8">
+                                    <mat-card-content>
+                                            <img class="members" [src]="member.payload.doc.data().imgurl" alt="member image">
+                                            <h3 class="text-center">{{member.payload.doc.data().name}}</h3>
+                                            <mat-icon *ngIf="member.payload.doc.data().contact" class="ico">call</mat-icon><p class="text-center inl">{{member.payload.doc.data().contact}}</p>
+                                    </mat-card-content>
+                                </mat-card>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mat-elevation-z8 memberblock">
+                <div class="row">
+                    <div class="col-12 orangebar">
+                        <h3 class="text-center whitetext">VICE PRESIDENT</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 pt-2">
+                        <mat-grid-list [cols]="cols" rowHeight='300px'>
+                            <mat-grid-tile *ngFor='let member of VicePresident' colspan='1' rowspan='1'>
+                                <mat-card class="example-card text-center mat-elevation-z8">
+                                    <mat-card-content>
+                                            <img class="members" [src]="member.payload.doc.data().imgurl" alt="member image">
+                                            <h3 class="text-center">{{member.payload.doc.data().name}}</h3>
+                                            <mat-icon *ngIf="member.payload.doc.data().contact" class="ico">call</mat-icon><p class="text-center inl">{{member.payload.doc.data().contact}}</p>
+                                    </mat-card-content>
+                                </mat-card>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mat-elevation-z8 memberblock">
+                <div class="row">
+                    <div class="col-12 orangebar">
+                        <h3 class="text-center whitetext">SECRETARY</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 pt-2">
+                        <mat-grid-list [cols]="cols" rowHeight='300px'>
+                            <mat-grid-tile *ngFor='let member of Secretary' colspan='1' rowspan='1'>
+                                <mat-card class="example-card text-center mat-elevation-z8">
+                                    <mat-card-content>
+                                            <img class="members" [src]="member.payload.doc.data().imgurl" alt="member image">
+                                            <h3 class="text-center">{{member.payload.doc.data().name}}</h3>
+                                            <mat-icon *ngIf="member.payload.doc.data().contact" class="ico">call</mat-icon><p class="text-center inl">{{member.payload.doc.data().contact}}</p>
+                                    </mat-card-content>
+                                </mat-card>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mat-elevation-z8 memberblock">
+                <div class="row">
+                    <div class="col-12 orangebar">
+                        <h3 class="text-center whitetext">JOINT SECRETARY</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 pt-2">
+                        <mat-grid-list [cols]="cols" rowHeight='300px'>
+                            <mat-grid-tile *ngFor='let member of JointSecretary' colspan='1' rowspan='1'>
+                                <mat-card class="example-card text-center mat-elevation-z8">
+                                    <mat-card-content>
+                                            <img class="members" [src]="member.payload.doc.data().imgurl" alt="member image">
+                                            <h3 class="text-center">{{member.payload.doc.data().name}}</h3>
+                                            <mat-icon *ngIf="member.payload.doc.data().contact" class="ico">call</mat-icon><p class="text-center inl">{{member.payload.doc.data().contact}}</p>
+                                    </mat-card-content>
+                                </mat-card>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mat-elevation-z8 memberblock">
+                <div class="row">
+                    <div class="col-12 orangebar">
+                        <h3 class="text-center whitetext">TREASURER</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 pt-2">
+                        <mat-grid-list [cols]="cols" rowHeight='300px'>
+                            <mat-grid-tile *ngFor='let member of Treasurer' colspan='1' rowspan='1'>
+                                <mat-card class="example-card text-center mat-elevation-z8">
+                                    <mat-card-content>
+                                            <img class="members" [src]="member.payload.doc.data().imgurl" alt="member image">
+                                            <h3 class="text-center">{{member.payload.doc.data().name}}</h3>
+                                            <mat-icon *ngIf="member.payload.doc.data().contact" class="ico">call</mat-icon><p class="text-center inl">{{member.payload.doc.data().contact}}</p>
+                                    </mat-card-content>
+                                </mat-card>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mat-elevation-z8 memberblock">
+                <div class="row">
+                    <div class="col-12 orangebar">
+                        <h3 class="text-center whitetext">EXECUTIVE MEMBERS</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 pt-2">
+                        <mat-grid-list [cols]="cols" rowHeight='300px'>
+                            <mat-grid-tile *ngFor='let member of ExecutiveMembers' colspan='1' rowspan='1'>
+                                <mat-card class="example-card text-center mat-elevation-z8">
+                                    <mat-card-content>
+                                            <img class="members" [src]="member.payload.doc.data().imgurl" alt="member image">
+                                            <h3 class="text-center">{{member.payload.doc.data().name}}</h3>
+                                            <mat-icon *ngIf="member.payload.doc.data().contact" class="ico">call</mat-icon><p class="text-center inl">{{member.payload.doc.data().contact}}</p>
+                                    </mat-card-content>
+                                </mat-card>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mat-elevation-z8 memberblock">
+                <div class="row">
+                    <div class="col-12 orangebar">
+                        <h3 class="text-center whitetext">MEDIA PRABANDHAN</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 pt-2">
+                        <mat-grid-list [cols]="cols" rowHeight='300px'>
+                            <mat-grid-tile *ngFor='let member of MediaPrabhandan' colspan='1' rowspan='1'>
+                                <mat-card class="example-card text-center mat-elevation-z8">
+                                    <mat-card-content>
+                                            <img class="members" [src]="member.payload.doc.data().imgurl" alt="member image">
+                                            <h3 class="text-center">{{member.payload.doc.data().name}}</h3>
+                                            <mat-icon *ngIf="member.payload.doc.data().contact" class="ico">call</mat-icon><p class="text-center inl">{{member.payload.doc.data().contact}}</p>
+                                    </mat-card-content>
+                                </mat-card>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mat-elevation-z8 memberblock">
+                <div class="row">
+                    <div class="col-12 orangebar">
+                        <h3 class="text-center whitetext">PRO</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 pt-2">
+                        <mat-grid-list [cols]="cols" rowHeight='300px'>
+                            <mat-grid-tile *ngFor='let member of Pro' colspan='1' rowspan='1'>
+                                <mat-card class="example-card text-center mat-elevation-z8">
+                                    <mat-card-content>
+                                            <img class="members" [src]="member.payload.doc.data().imgurl" alt="member image">
+                                            <h3 class="text-center">{{member.payload.doc.data().name}}</h3>
+                                            <mat-icon *ngIf="member.payload.doc.data().contact" class="ico">call</mat-icon><p class="text-center inl">{{member.payload.doc.data().contact}}</p>
+                                    </mat-card-content>
+                                </mat-card>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

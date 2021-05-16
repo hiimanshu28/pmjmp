@@ -1,0 +1,19 @@
+
+.members{
+    margin-top: 5px;
+    max-height:280px;
+    max-width: 280px;
+}
+.example-card{
+    border-top: 1px solid rgb(206, 206, 206);
+    width: 300px;
+    background-color: #eee;
+}
+.inl{
+    /* margin-bottom: -5px; */
+    display: inline;
+    font-size: 1rem;
+}
+.ico{
+    font-size: 1rem;
+}

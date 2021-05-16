@@ -1,0 +1,8 @@
+.photos{
+    max-width: 100%;
+    max-height: 280px;
+}
+.picbackground{
+    background-color: #FF8B00;
+    cursor: pointer;
+}

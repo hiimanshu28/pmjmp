@@ -1,0 +1,100 @@
+$text-primary : #C53A01;
+$text-secondary : #00B438;
+$bg-primary : white;
+$bg-secondary : #FF8B00;
+
+.bannerimg{
+    width: 100%;
+    padding: 0 !important;
+}
+.bannerimg2{
+    max-height: 25%;
+    padding: 0 !important;
+}
+.talladsm{
+    width:200px;
+}
+.smtallad{
+    width:90%;
+}
+.col-12,.col-10,.col-2{
+    padding: 0 !important;
+}
+// .ng-star-inserted{
+    // width:99.6vw;
+    // margin-left: 5px;
+// }
+.mq{
+    color: $text-primary;
+    p{
+        margin-bottom: 0.5rem;
+    }
+}
+.adtitle{
+    text-align: center;
+}
+.adimg{
+    height:249px;
+    width: 333px;
+    opacity: 1;
+    transition: 300ms ease;
+}
+.adpara{
+    position: absolute;
+    color: black;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 300ms ease;
+}
+mat-card{
+    &:hover{
+        img{
+            opacity: 15%;
+        }
+        p{
+            opacity: 1;
+            top: 55px;
+            left: 5px;
+        }
+    }
+}
+.adimgfoo{
+    max-height: 200px;
+    max-width:300px;
+}
+.customcard{
+    height: 180px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(74, 165, 221);
+    color: white;
+}
+.starchild{
+    .ng-star-inserted{
+            display: inline-block;
+            max-width:300px !important;
+    }
+}
+.narrowheading{
+    border-bottom: 0px;
+    cursor: pointer;
+    background-color: #D86D35;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+.cardcontents{
+    margin-bottom: 0px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    transition: 200ms ease;
+    height: 35px;
+    &:hover{
+        background-color: rgb(255, 142, 81);
+        font-size: 1.4rem;
+    }
+}
+.welcome{
+    font-weight: bold;
+    font-size: 1.2rem;
+}

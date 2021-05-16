@@ -1,0 +1,88 @@
+<div class="row justify-content-center mt-3 mb-3">
+    <div class="col-12 text-center">
+      <h4>Manage Photos</h4>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-3">
+        <button mat-raised-button (click)='goCreate()'>Upload New Photo</button>
+    </div>
+    <div class="col-3">
+        <button mat-raised-button (click)='goShow()'>View All Photos</button>
+    </div>
+</div>
+<div *ngIf='create' class="row mt-4">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-5 text-center heading mat-elevation-z8 coolfont"><h1>Upload New Photo</h1></div>
+        </div>
+        <div class="row">
+            <div class="col-5 planform mat-elevation-z8">
+                <form [formGroup]="exampleForm" novalidate (ngSubmit)="createPhoto(exampleForm.value)">
+                    <div class="row">
+                        <div class="col col-12">
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Photo Title" class="form-control" formControlName="title">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.title">
+                                  <mat-error *ngIf="exampleForm.get('title').hasError(validation.type) && (exampleForm.get('title').dirty || exampleForm.get('title').touched)">{{validation.message}}</mat-error>
+                                </ng-container>
+                            </div>
+                            <div class="form-group">
+                                    <div class="btn btn-outline-success pointer"><label for="image">Select Image</label></div> 
+                                    <input type="file" accept="image/*" name="image" id='image' class="hidden" (change)=upload($event)>
+                            </div>
+                            <div>
+                                <p *ngIf='showprog' style="color: orangered;">Image is being uploaded. Please wait.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <button mat-raised-button color="primary" type="submit" [disabled]="!exampleForm.valid">Upload</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-7">
+                 <img id="photoimg" [src]="url">
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf='show' class="row mt-4">
+    <div class="col-12">
+        <div class="mat-elevation-z8">
+            <table style="width: 100%;" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="blank">
+                  <th mat-header-cell *matHeaderCellDef> <h5>&nbsp;&nbsp;</h5> </th>
+                  <td mat-cell *matCellDef="let element"> &nbsp;&nbsp; </td>
+                </ng-container>
+                <ng-container matColumnDef="title">
+                  <th mat-header-cell *matHeaderCellDef> <h5>Title</h5> </th>
+                  <td mat-cell *matCellDef="let element"> {{element.payload.doc.data().title}} </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="image">
+                  <th mat-header-cell *matHeaderCellDef> <h5>Photo</h5> </th>
+                  <td mat-cell *matCellDef="let element"> <img [src]="element.payload.doc.data().imgurl" alt="ad image" class="photoimgsm"> </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef> <h5> </h5> </th>
+                    <td mat-cell *matCellDef="let element"> 
+                        <button class="btn btn-outline-danger mat-elevation-z8" (click)="goDelete(element.payload.doc.id)">Delete</button> 
+                    </td>
+                </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+              
+        </div>
+    </div>
+</div>

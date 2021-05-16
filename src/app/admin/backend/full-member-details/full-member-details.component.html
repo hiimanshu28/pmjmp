@@ -1,0 +1,286 @@
+<button [useExistingCss]="true" printSectionId="divtoprint" ngxPrint>Print</button>
+<div class="col-12" id = 'divtoprint'>
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <img src="{{member.photoURL}}" class='photo' alt="">
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-4">
+            आई कार्ड क्रमांक - {{member.icard}}            
+        </div>
+        <div class="col-4">
+          सदस्यता क्रमांक- {{member.sadasyata}}
+        </div>
+        <div class="col-4">
+          ब्लड ग्रुप - {{member.blood}}
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-7">
+          नाम - {{member.name}}
+        </div>
+        <div class="col-5">
+          पिता - {{member.pita}}
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-8">
+          स्थाई पता - {{member.pata}}
+        </div>
+        <div class="col-4">
+          पिन - {{member.pin}}
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-4">
+          जन्म तिथि - {{member.dob}}
+        </div>
+        <div class="col-4">
+          जन्म स्थान - {{member.pob}}
+        </div>
+        <div class="col-4">
+          विवाह तिथि - {{member.dom}}
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-6">
+          नागरिकता - {{member.nagrikta}}
+        </div>
+        <div class="col-6">
+          शिक्षा - {{member.siksha}}
+        </div>
+      </div>
+      <div class="row mb-2 justify-content-end">
+        <div class="col-6">
+          व्यवसाय/नौकरी - {{member.vyavsay}}
+        </div>
+        <div class="col-6">
+          प्रतिष्ठान का नाम - {{member.pratisthan}}
+        </div>
+        <div class="col-6">
+          पद नाम - {{member.pad}}
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-8">
+          विशेष उपलब्धता - {{member.uplabdhta}}
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-4">
+          मोबाइल नंबर - {{member.mobile}}
+        </div>
+        <div class="col-4">
+          फोन - {{member.phone}}
+        </div>
+        <div class="col-4">
+          ईमेल आईडी - {{member.email}}
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-4">
+          फेसबुक आईडी - {{member.fb}}
+        </div>
+        <div class="col-4">
+          टि्वटर आईडी - {{member.tw}}
+        </div>
+        <div class="col-4">
+          इंस्टाग्राम आईडी - {{member.in}}
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-4">
+          रुचि - {{member.ruchi}}
+        </div>
+        <div class="col-8">
+          विशेष योग्यता - {{member.yogyata}}
+        </div>
+      </div>
+      <div class="row mb-2"><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;पारिवारिक विवरण</h5></div>
+      <div class="row mb-2">
+        <div class="col-4">
+          पिता - {{member.pita2}}
+        </div>
+        <div class="col-4">
+          S/o - {{member.pso}}
+        </div>
+        <div class="col-4">
+          जन्मतिथि - {{member.pdb}}
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-4">
+          माता - {{member.mata}}
+        </div>
+        <div class="col-4">
+          D/o - {{member.mdo}}
+        </div>
+        <div class="col-4">
+          जन्मतिथि - {{member.mdb}}
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-4">
+          पति/पत्नी - {{member.spouse}}
+        </div>
+        <div class="col-4">
+          S/o,D/o - {{member.ssodo}}
+        </div>
+        <div class="col-4">
+          जन्मतिथि - {{member.sdb}}
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-4">
+            <p>भाई/बहन</p>
+        </div>
+      </div>
+      <div class="row mb-2 text-center">
+          <div class="col-4">नाम</div>
+          <div class="col-4">वि./अवि.</div>
+          <div class="col-4">जन्मतिथि</div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-4">
+            i - {{member.bhai1}}
+        </div>
+        <div class="col-4">
+            {{member.bm1}}
+        </div>
+        <div class="col-4">
+            {{member.bdb1}}
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-4">
+            ii - {{member.bhai2}}
+        </div>
+        <div class="col-4">
+            {{member.bm2}}
+        </div>
+        <div class="col-4">
+            {{member.bdb2}}
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-4">
+            iii - {{member.bhai3}}
+        </div>
+        <div class="col-4">
+            {{member.bm3}}
+        </div>
+        <div class="col-4">
+            {{member.bdb3}}
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-4">
+            iv - {{member.bhai4}}
+        </div>
+        <div class="col-4">
+            {{member.bm4}}
+        </div>
+        <div class="col-4">
+            {{member.bdb4}}
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-4">
+            <p>पुत्र/पुत्री</p>
+        </div>
+      </div>
+      <div class="row mb-2 text-center">
+          <div class="col-4">नाम</div>
+          <div class="col-4">वि./अवि.</div>
+          <div class="col-4">जन्मतिथि</div>
+      </div>
+        <div class="row mb-2">
+            <div class="col-4">
+                i - {{member.putra1}}
+            </div>
+            <div class="col-4">
+                {{member.pm1}}
+            </div>
+            <div class="col-4">
+                {{member.pdb1}}
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-4">
+                ii - {{member.putra2}}
+            </div>
+            <div class="col-4">
+                {{member.pm2}}
+            </div>
+            <div class="col-4">
+                {{member.pdb2}}
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-4">
+                iii - {{member.putra3}}
+            </div>
+            <div class="col-4">
+                {{member.pm3}}
+            </div>
+            <div class="col-4">
+                {{member.pdb3}}
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-4">
+                iv - {{member.putra4}}
+            </div>
+            <div class="col-4">
+                {{member.pm4}}
+            </div>
+            <div class="col-4">
+                {{member.pdb4}}
+            </div>
+          </div>
+      <div class="row mb-1">
+        <div class="col-4 text-center">परिवार का मूल निवास स्थान</div>
+        <div class="col-4">{{member.sthan}}</div>
+        <div class="col-1 text-center">जिला</div>
+        <div class="col-3">{{member.jila}}</div>
+      </div>
+      <div class="row mb-1">
+        <div class="col-1 text-center">राज्य</div>
+        <div class="col-3">{{member.rajya}}</div>
+        <div class="col-4 text-center">विभाजन पूर्व का विवरण- </div>
+        <div class="col-4">{{member.vibhajan}}</div>
+      </div>
+      <div class="row mb-1">
+        <div class="col-3 text-center">सदस्यता हेतु परिचयकर्ता का नाम</div>
+        <div class="col-2">{{member.parichaykarta}}</div>
+        <div class="col-1 text-center">फोन नं.</div>
+        <div class="col-2">{{member.pmno}}</div>
+        <div class="col-1 text-center">ईमेल</div>
+        <div class="col-3">{{member.pem}}</div>
+      </div>
+      <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;प्रति,</div>
+      <div class="row">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;अध्यक्ष
+      </div>
+      <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;महोदय,</div>
+      <div class="row">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;मैं
+        <div class="col-2">{{member.dname}}</div>
+        <div class="col-2 text-center">पिता/पति</div>
+        <div class="col-2">{{member.dpita}}</div>
+        <div class="col-1 text-center">निवासी</div>
+        <div class="col-4">{{member.daddr}}</div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-12 ml-2">स्वेच्छा से पंजाबी महासंघ जबलपुर की आजीवन सदस्यता लेना चाहता/चाहती हूं वह सदैव संस्था के उद्देश्यों की पूर्ति व नियमों के पालन के लिए तत्पर रहूंगा/रहूंगी ।</div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-12 ml-2">यदि मैं संस्था के नियमों का उल्लंघन करता/करती हूं या ऐसे कोई कार्य जो संस्था के हित में ना हो मेरे द्वारा किए जाने पर संस्था को मेरी सदस्यता रद्द करने या पद मुक्त करने का अधिकार होगा ।</div>
+      </div>
+    </div>
+        <div class="row text-center">
+          <div class="col-12">
+            <button mat-raised-button class="btn btn-primary" (click)='goBack()'>Back</button>
+          </div>
+        </div>

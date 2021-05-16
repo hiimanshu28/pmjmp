@@ -1,0 +1,19 @@
+.hidden{
+    display:none;
+}
+.pointer:hover *{
+    cursor: pointer;
+}
+.heading{
+    background-color: #D86D35;
+    color:white;
+    text-shadow: 1px 1px 10px black;
+    height: 55px;
+}
+#planimg{
+    max-width: 100%;
+    margin-top: 20px;
+}
+.planform{
+    margin-top: 20px;
+}

@@ -1,0 +1,134 @@
+<div class="container-fluid mb-3">
+    <div class="row" *ngIf='!small'>
+      <div class="col-12 mat-elevation-z8 brandbar">
+        <div class="row">
+          <div class="col-md-2 col-xs-12 nopad brandlogo">
+            <img src="../assets/logo.jpeg" id="logoimg">
+          </div>
+          <div class="col-md-10 col-xs-12 toptext">
+            <div class="row text-center">
+              <div class="col-12">
+                <p class="brandnamebig">PUNJABI MAHASANGH JABALPUR</p>
+              </div>
+            </div>
+            <div class="row text-center">
+              <div class="col-12">
+                <p class="brandnamebig">पंजाबी महासंघ जबलपुर</p>
+              </div>
+            </div>
+            <div class="row text-center">
+              <div class="col-12">
+                <p class="regtext">Society Reg. No. 04/14/01/20955/19</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf='!small'>          
+      <div class="col-12 mat-elevation-z8 navibar">
+        <div class="row buttons">
+          <div class="col-12 text-center nopad">
+            <button mat-raised-button class="ml-1 bluebtn" (click)='goHome()'>Home</button>
+            <button mat-raised-button class="ml-1 bluebtn" (click)='goAbout()'>About Us</button>
+            <button mat-raised-button class="ml-1 bluebtn" (click)='goZones()'>Zones</button>
+            <mat-menu #galleryMenu="matMenu">
+              <button mat-raised-button class="ml-1 mb-2 mr-1 bluebtns" (click)='goPhotos()'>Photos</button><mat-divider></mat-divider>
+              <button mat-raised-button class="ml-1 mb-2 mr-1 mt-2  bluebtns" (click)='goVideos()'>Videos</button><mat-divider></mat-divider>
+              <button mat-raised-button class="ml-1 mr-1 mt-2  bluebtns" (click)='goActivities()'>Activities</button>
+            </mat-menu>
+            <button mat-raised-button class="ml-1 bluebtn" (click)='goMatrimony()'>Matrimony</button>
+            <button mat-raised-button class="ml-1 bluebtn" [matMenuTriggerFor]="galleryMenu">Gallery</button>
+            <button mat-raised-button class="ml-1 bluebtn" (click)='goNews()'>News</button>
+            <button mat-raised-button class="ml-1 bluebtn" (click)='goDonations()'>Donations</button>
+            <button mat-raised-button class="ml-1 bluebtn" (click)='goMember()'>Membership</button>
+            <button mat-raised-button class="ml-1 bluebtn" (click)='goDirectory()'>Directory</button>
+            <button mat-raised-button class="ml-1 bluebtn" (click)='goZonal()'>Zonal Body</button>
+            <button mat-raised-button class="ml-1 bluebtn" (click)='goNational()'>National Body</button>
+            <button mat-raised-button class="ml-1 bluebtn" (click)='goContact()'>Contact</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf='small'>
+      <div class="col-11 brandbar">
+        <div class="row">
+          <div class="col-12">
+            <div class="row">
+              <div class="headerdiv">
+                <img src="../assets/logo.jpeg" id="logoimgs">
+              </div>
+              <div class="headerdiv">
+                <p class="brandnamesm">PUNJABI MAHASANGH JABALPUR</p>
+                <p class="brandnamesm">पंजाबी महासंघ जबलपुर</p>
+                <p class="regtextsm">Society Reg. No. 04/14/01/20955/19</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-1 pl-0 pr-0 brandbar topmenu">
+        <mat-menu #appMenu="matMenu">
+            <button mat-raised-button class="ml-1 mb-2 mr-1 bluebtns" (click)='goHome()'>Home</button><mat-divider></mat-divider>
+            <button mat-raised-button class="ml-1 mb-2 mr-1 mt-2  bluebtns" (click)='goAbout()'>About Us</button><mat-divider></mat-divider>
+            <button mat-raised-button class="ml-1 mb-2 mr-1 mt-2  bluebtns" (click)='goZones()'>Zones</button><mat-divider></mat-divider>
+            <button mat-raised-button class="ml-1 mb-2 mr-1 mt-2  bluebtns" (click)='goMatrimony()'>Matrimony</button><mat-divider></mat-divider>
+            <button mat-menu-item class="ml-1 mb-2 mr-1 mt-2  bluebtns" [matMenuTriggerFor]="subMenu">Gallery</button><mat-divider></mat-divider>
+            <button mat-raised-button class="ml-1 mb-2 mr-1 mt-2  bluebtns" (click)='goNews()'>News</button><mat-divider></mat-divider>
+            <button mat-raised-button class="ml-1 mb-2 mr-1 mt-2  bluebtns" (click)='goDonations()'>Donations</button><mat-divider></mat-divider>
+            <button mat-raised-button class="ml-1 mb-2 mr-1 mt-2  bluebtns" (click)='goMember()'>Membership</button><mat-divider></mat-divider>
+            <button mat-raised-button class="ml-1 mb-2 mr-1 mt-2  bluebtns" (click)='goDirectory()'>Directory</button><mat-divider></mat-divider>
+            <button mat-raised-button class="ml-1 mb-2 mr-1 mt-2  bluebtns" (click)='goZonal()'>Zonal Body</button><mat-divider></mat-divider>
+            <button mat-raised-button class="ml-1 mb-2 mr-1 mt-2  bluebtns" (click)='goNational()'>National Body</button><mat-divider></mat-divider>
+            <button class="ml-1 mr-1 mt-2  bluebtns" mat-raised-button (click)='goContact()'>Contact</button>
+        </mat-menu>
+        <mat-menu #subMenu="matMenu">
+          <button mat-menu-item (click)='goPhotos()'>Photos</button>
+          <button mat-menu-item (click)='goVideos()'>Videos</button>
+          <button mat-menu-item (click)='goActivities()'>Activities</button>
+        </mat-menu>
+        
+        <button class="menubtn" mat-icon-button [matMenuTriggerFor]="appMenu">
+          <mat-icon style="font-size: auto;">menu</mat-icon>
+        </button>
+      </div>
+    </div>
+</div>
+
+<!-- Variable Content Area -->
+<div class="container-fluid main">
+    <div class="row maincontent">
+      <div class="col-12">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+</div>
+
+<!-- Footer Area -->
+<div class="container-fluid foobar">
+  <div class="row footext justify-content-center pt-3">
+    <div class="col-12 text-center starchild">
+      <div class="row justify-content-center">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8" *ngFor= " let ad of footerads ">
+          <ngb-carousel class="mb-3" pauseOnHover='true' [showNavigationArrows]='arrows' [showNavigationIndicators]='ind'>
+            <ng-template ngbSlide>
+                <div>
+                  <img [src]="ad['imgurl1']" class="adimgfoo mr-2" alt="sliding-ad">
+                </div>
+            </ng-template>
+            <ng-template ngbSlide>
+                <div>
+                  <img [src]="ad['imgurl2']" class="adimgfoo mr-2" alt="sliding-ad">
+                </div>
+            </ng-template>
+            <ng-template ngbSlide>
+                <div>
+                  <img [src]="ad['imgurl3']" class="adimgfoo mr-2" alt="sliding-ad">
+                </div>
+            </ng-template>
+          </ngb-carousel>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

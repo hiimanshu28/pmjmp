@@ -1,0 +1,399 @@
+
+    <div class="col-12">
+        <h3 style="text-align: center; text-decoration: underline;">आजीवन सदस्यता फ़ॉर्म</h3>
+        <form [formGroup]="exampleForm" (ngSubmit)="razorPayHimanshu(exampleForm.value)">
+          <div class="row flb mt-3 mb-2">
+            <div class="profileImg">
+                <img *ngIf='imgUploaded' [src]="url" class="profilepic" alt="profilepic">
+                <p *ngIf='!imgUploaded' class="imgtext"><label for="image" class="imgtext">सदस्य की फोटो</label></p>
+            </div>
+          </div>
+          <div *ngIf='showprog' class="row justify-content-center">
+              <div>
+                  <p style="color: orangered;">Image is being uploaded. Please wait.</p>
+              </div>
+          </div>
+          <div class="row hidden">
+              <div class="col-12">
+                      <input type="file" accept="image/*" name="image" id='image' (change)=upload($event)>
+              </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-4">
+              <label for="icard">आई कार्ड क्रमांक</label>
+              <input placeholder="(कार्यालय उपयोग हेतु)" class="form-control" id="icard" formControlName="icard">
+            </div>
+            <div class="col-4">
+              <label for="sadasyata">सदस्यता क्रमांक</label>
+              <input placeholder="(कार्यालय उपयोग हेतु)" class="form-control" id="sadasyata" formControlName="sadasyata">
+            </div>
+            <div class="col-4">
+              <label for="blood" style="color: red;">ब्लड ग्रुप</label>
+              <input placeholder="ब्लड ग्रुप" class="form-control" id="blood" formControlName="blood">
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-7">
+              <label for="name">नाम</label>
+              <input placeholder="नाम" class="form-control" id="name" formControlName="name" required>
+            </div>
+            <div class="col-5">
+              <label for="pita">पिता</label>
+              <input placeholder="पिता" class="form-control" id="pita" formControlName="pita" required>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-8">
+              <label for="pata">स्थाई पता</label>
+              <textarea placeholder="स्थाई पता" class="form-control" id="pata" formControlName="pata" required></textarea>
+            </div>
+            <div class="col-4">
+              <label for="pin">पिन</label>
+              <input placeholder="पिन" class="form-control" id="pin" formControlName="pin" required>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-4">
+              <label for="dob">जन्म तिथि</label>
+              <input type="date" class="form-control" id="dob" formControlName="dob" required>
+            </div>
+            <div class="col-4">
+              <label for="pob">जन्म स्थान</label>
+              <input placeholder="जन्म स्थान" class="form-control" id="pob" formControlName="pob" required>
+            </div>
+            <div class="col-4">
+              <label for="dom">विवाह तिथि</label>
+              <input type="date" class="form-control" id="dom" formControlName="dom">
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-6">
+              <label for="nagrikta">नागरिकता</label>
+              <input placeholder="नागरिकता" class="form-control" id="nagrikta" formControlName="nagrikta" required>
+            </div>
+            <div class="col-6">
+              <label for="siksha">शिक्षा</label>
+              <input placeholder="शिक्षा" class="form-control" id="siksha" formControlName="siksha" required>
+            </div>
+          </div>
+          <div class="row mb-2 justify-content-end">
+            <div class="col-6">
+              <label for="vyavsay">व्यवसाय/नौकरी</label>
+              <input placeholder="व्यवसाय/नौकरी" class="form-control" id="vyavsay" formControlName="vyavsay" required>
+            </div>
+            <div class="col-6">
+              <label for="pratisthan">प्रतिष्ठान का नाम</label>
+              <input placeholder="प्रतिष्ठान का नाम" class="form-control" id="pratisthan" formControlName="pratisthan">
+            </div>
+            <div class="col-6">
+              <label for="pad">पद नाम</label>
+              <input placeholder="पद नाम" class="form-control" id="pad" formControlName="pad">
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-8">
+              <label for="uplabdhta">विशेष उपलब्धता</label>
+              <input placeholder="विशेष उपलब्धता" class="form-control" id="uplabdhta" formControlName="uplabdhta">
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-4">
+              <label for="mobile">मोबाइल नंबर</label>
+              <input placeholder="मोबाइल नंबर" class="form-control" id="mobile" formControlName="mobile" required>
+            </div>
+            <div class="col-4">
+              <label for="phone">फोन</label>
+              <input placeholder="फोन" class="form-control" id="phone" formControlName="phone">
+            </div>
+            <div class="col-4">
+              <label for="email">ईमेल आईडी</label>
+              <input placeholder="ईमेल आईडी" class="form-control" id="email" formControlName="email" required>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-4">
+              <label for="fb">फेसबुक आईडी</label>
+              <input placeholder="फेसबुक आईडी" class="form-control" id="fb" formControlName="fb">
+            </div>
+            <div class="col-4">
+              <label for="tw">टि्वटर आईडी</label>
+              <input placeholder="टि्वटर आईडी" class="form-control" id="tw" formControlName="tw">
+            </div>
+            <div class="col-4">
+              <label for="in">इंस्टाग्राम आईडी</label>
+              <input placeholder="इंस्टाग्राम आईडी" class="form-control" id="in" formControlName="in">
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-4">
+              <label for="ruchi">रुचि</label>
+              <input placeholder="रुचि" class="form-control" id="ruchi" formControlName="ruchi">
+            </div>
+            <div class="col-8">
+              <label for="yogyata">विशेष योग्यता</label>
+              <input placeholder="विशेष योग्यता" class="form-control" id="yogyata" formControlName="yogyata">
+            </div>
+          </div>
+          <div class="row mb-2"><h5 style="text-decoration: underline;">पारिवारिक विवरण</h5></div>
+          <div class="row mb-2">
+            <div class="col-4">
+              <label for="pita2">पिता</label>
+              <input placeholder="पिता" class="form-control" id="pita2" formControlName="pita2">
+            </div>
+            <div class="col-4">
+              <label for="pso">S/o</label>
+              <input placeholder="S/o" class="form-control" id="pso" formControlName="pso">
+            </div>
+            <div class="col-4">
+              <label for="pdb">जन्मतिथि</label>
+              <input type="date" class="form-control" id="pdb" formControlName="pdb">
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-4">
+              <label for="mata">माता</label>
+              <input placeholder="माता" class="form-control" id="mata" formControlName="mata">
+            </div>
+            <div class="col-4">
+              <label for="mdo">D/o</label>
+              <input placeholder="D/o" class="form-control" id="mdo" formControlName="mdo">
+            </div>
+            <div class="col-4">
+              <label for="mdb">जन्मतिथि</label>
+              <input type="date" class="form-control" id="mdb" formControlName="mdb">
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-4">
+              <label for="spouse">पति/पत्नी</label>
+              <input placeholder="पति/पत्नी" class="form-control" id="spouse" formControlName="spouse">
+            </div>
+            <div class="col-4">
+              <label for="ssodo">S/o,D/o</label>
+              <input placeholder="D/o" class="form-control" id="ssodo" formControlName="ssodo">
+            </div>
+            <div class="col-4">
+              <label for="sdb">जन्मतिथि</label>
+              <input type="date" class="form-control" id="sdb" formControlName="sdb">
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-4">
+                <p>भाई/बहन</p>
+            </div>
+          </div>
+          <div class="row mb-2 text-center">
+              <div class="col-4">नाम</div>
+              <div class="col-4">वि./अवि.</div>
+              <div class="col-4">जन्मतिथि</div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-1"><label for="bhai1">i)</label></div>
+                    <div class="col-11"><input class="form-control" placeholder="नाम" id="bhai1" formControlName="bhai1"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row text-center">
+                    <input style="margin-left: auto;" type="radio" id="वि" formControlName="bm1" value="वि">&nbsp;
+                    <label for="वि">वि</label> &nbsp;&nbsp;&nbsp;
+                    <input type="radio" id="अवि" formControlName="bm1" value="अवि">
+                    <label style="margin-right: auto;" for="अवि">अवि</label>
+                </div>
+            </div>
+            <div class="col-4">
+              <input type="date" class="form-control" formControlName="bdb1">
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-1"><label for="bhai2">ii)</label></div>
+                    <div class="col-11"><input class="form-control" placeholder="नाम" id="bhai2" formControlName="bhai2"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row text-center">
+                    <input style="margin-left: auto;" type="radio" id="वि2" formControlName="bm2" value="वि">&nbsp;
+                    <label for="वि2">वि</label> &nbsp;&nbsp;&nbsp;
+                    <input type="radio" id="अवि2" formControlName="bm2" value="अवि">
+                    <label style="margin-right: auto;" for="अवि2">अवि</label>
+                </div>
+            </div>
+            <div class="col-4">
+              <input type="date" class="form-control" formControlName="bdb2">
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-1"><label for="bhai3">iii)</label></div>
+                    <div class="col-11"><input class="form-control" placeholder="नाम" id="bhai3" formControlName="bhai3"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row text-center">
+                    <input style="margin-left: auto;" type="radio" id="वि3" formControlName="bm3" value="वि">&nbsp;
+                    <label for="वि3">वि</label> &nbsp;&nbsp;&nbsp;
+                    <input type="radio" id="अवि3" formControlName="bm3" value="अवि">
+                    <label style="margin-right: auto;" for="अवि3">अवि</label>
+                </div>
+            </div>
+            <div class="col-4">
+              <input type="date" class="form-control" formControlName="bdb3">
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-1"><label for="bhai4">iv)</label></div>
+                    <div class="col-11"><input class="form-control" placeholder="नाम" id="bhai4" formControlName="bhai4"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row text-center">
+                    <input style="margin-left: auto;" type="radio" id="वि4" formControlName="bm4" value="वि">&nbsp;
+                    <label for="वि4">वि</label> &nbsp;&nbsp;&nbsp;
+                    <input type="radio" id="अवि4" formControlName="bm4" value="अवि">
+                    <label style="margin-right: auto;" for="अवि4">अवि</label>
+                </div>
+            </div>
+            <div class="col-4">
+              <input type="date" class="form-control" formControlName="bdb4">
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-4">
+                <p>पुत्र/पुत्री</p>
+            </div>
+          </div>
+          <div class="row mb-2 text-center">
+              <div class="col-4">नाम</div>
+              <div class="col-4">वि./अवि.</div>
+              <div class="col-4">जन्मतिथि</div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-1"><label for="putra1">i)</label></div>
+                    <div class="col-11"><input class="form-control" placeholder="नाम" id="putra1" formControlName="putra1"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row text-center">
+                    <input style="margin-left: auto;" type="radio" id="वि5" formControlName="pm1" value="वि">&nbsp;
+                    <label for="वि5">वि</label> &nbsp;&nbsp;&nbsp;
+                    <input type="radio" id="अवि5" formControlName="pm1" value="अवि">
+                    <label style="margin-right: auto;" for="अवि5">अवि</label>
+                </div>
+            </div>
+            <div class="col-4">
+              <input type="date" class="form-control" formControlName="pdb1">
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-1"><label for="putra2">ii)</label></div>
+                    <div class="col-11"><input class="form-control" placeholder="नाम" id="putra2" formControlName="putra2"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row text-center">
+                    <input style="margin-left: auto;" type="radio" id="वि6" formControlName="pm2" value="वि">&nbsp;
+                    <label for="वि6">वि</label> &nbsp;&nbsp;&nbsp;
+                    <input type="radio" id="अवि6" formControlName="pm2" value="अवि">
+                    <label style="margin-right: auto;" for="अवि6">अवि</label>
+                </div>
+            </div>
+            <div class="col-4">
+              <input type="date" class="form-control" formControlName="pdb2">
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-1"><label for="putra3">iii)</label></div>
+                    <div class="col-11"><input class="form-control" placeholder="नाम" id="putra3" formControlName="putra3"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row text-center">
+                    <input style="margin-left: auto;" type="radio" id="वि7" formControlName="pm3" value="वि">&nbsp;
+                    <label for="वि7">वि</label> &nbsp;&nbsp;&nbsp;
+                    <input type="radio" id="अवि7" formControlName="pm3" value="अवि">
+                    <label style="margin-right: auto;" for="अवि7">अवि</label>
+                </div>
+            </div>
+            <div class="col-4">
+              <input type="date" class="form-control" formControlName="pdb3">
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-1"><label for="putra4">iv)</label></div>
+                    <div class="col-11"><input class="form-control" placeholder="नाम" id="putra4" formControlName="putra4"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row text-center">
+                    <input style="margin-left: auto;" type="radio" id="वि8" formControlName="pm4" value="वि">&nbsp;
+                    <label for="वि8">वि</label> &nbsp;&nbsp;&nbsp;
+                    <input type="radio" id="अवि8" formControlName="pm4" value="अवि">
+                    <label style="margin-right: auto;" for="अवि8">अवि</label>
+                </div>
+            </div>
+            <div class="col-4">
+              <input type="date" class="form-control" formControlName="pdb4">
+            </div>
+          </div>
+          <div class="row mb-1">
+            <div class="col-4 text-center">परिवार का मूल निवास स्थान</div>
+            <div class="col-4"><input class="form-control" formControlName="sthan" required></div>
+            <div class="col-1 text-center">जिला</div>
+            <div class="col-3"><input class="form-control" formControlName="jila" required></div>
+          </div>
+          <div class="row mb-1">
+            <div class="col-1 text-center">राज्य</div>
+            <div class="col-3"><input class="form-control" formControlName="rajya" required></div>
+            <div class="col-4 text-center">विभाजन पूर्व का विवरण यदि कोई उपलब्ध हो तो</div>
+            <div class="col-4"><textarea class="form-control" formControlName='vibhajan'></textarea></div>
+          </div>
+          <div class="row mb-1">
+            <div class="col-3 text-center">सदस्यता हेतु परिचयकर्ता का नाम / स्वत:</div>
+            <div class="col-2"><input class="form-control" formControlName="parichaykarta"></div>
+            <div class="col-1 text-center">मोबाइल नं.</div>
+            <div class="col-2"><input class="form-control" formControlName="pmno"></div>
+            <div class="col-1 text-center">ईमेल</div>
+            <div class="col-3"><input class="form-control" formControlName="pem"></div>
+          </div>
+          <div class="row">प्रति,</div>
+          <div class="row">
+            <div class="col-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;अध्यक्ष</div>
+          </div>
+          <div class="row">महोदय,</div>
+          <div class="row mb-1">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            मैं
+            <div class="col-2"><input class="form-control" formControlName="dname" required></div>
+            <div class="col-1 text-center">पिता/पति</div>
+            <div class="col-2"><input class="form-control" formControlName="dpita" required></div>
+            <div class="col-1 text-center">निवासी</div>
+            <div class="col-5"><input class="form-control" formControlName="daddr" required></div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-12">स्वेच्छा से पंजाबी महासंघ जबलपुर की आजीवन सदस्यता लेना चाहता/चाहती हूं वह सदैव संस्था के उद्देश्यों की पूर्ति व नियमों के पालन के लिए तत्पर रहूंगा/रहूंगी ।</div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-12">यदि मैं संस्था के नियमों का उल्लंघन करता/करती हूं या ऐसे कोई कार्य जो संस्था के हित में ना हो मेरे द्वारा किए जाने पर संस्था को मेरी सदस्यता रद्द करने या पद मुक्त करने का अधिकार होगा ।</div>
+          </div>
+          <div class="row text-center">
+            <div class="col-12">
+              <button type="submit" mat-raised-button class="btn btn-primary" [disabled]="!exampleForm.valid">Pay ₹5100 & Register</button>
+            </div>
+          </div>
+          <div class="row"></div>
+      </form>
+    </div>

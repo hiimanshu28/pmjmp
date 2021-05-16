@@ -1,0 +1,303 @@
+<div class="row justify-content-center mt-3 mb-3">
+    <div class="col-12 text-center">
+      <h4>Manage Zones</h4>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-3">
+        <button mat-raised-button (click)='goCreate()'>Create Zone</button>
+    </div>
+    <div class="col-3">
+        <button mat-raised-button (click)='goShow()'>View All Zones</button>
+    </div>
+</div>
+<div *ngIf='create' class="row mt-4">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-5 text-center heading mat-elevation-z8 coolfont"><h1>Create New Zone</h1></div>
+        </div>
+        <div class="row">
+            <div class="col-5 planform mat-elevation-z8 pt-4">
+                <form [formGroup]="exampleForm" novalidate (ngSubmit)="createZone(exampleForm.value)">
+                    <div class="row">
+                        <div class="col col-12">
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Zone Name" class="form-control" formControlName="name">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.name">
+                                  <mat-error *ngIf="exampleForm.get('name').hasError(validation.type) && (exampleForm.get('name').dirty || exampleForm.get('name').touched)">{{validation.message}}</mat-error>
+                                </ng-container>
+                            </div>
+                            <div class="form-group">
+                                    <div class="btn btn-outline-success pointer"><label for="image4">Upload Zone Image</label></div> 
+                                    <input type="file" accept="image/*" name="image4" id='image4' class="hidden" (change)=upload4($event)>
+                            </div>
+                            <div>
+                                <p *ngIf='showprog4' style="color: orangered;">Image is being uploaded. Please wait.</p>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Member 1 Name" class="form-control" formControlName="mname1">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.mname1">
+                                  <mat-error *ngIf="exampleForm.get('mname1').hasError(validation.type) && (exampleForm.get('mname1').dirty || exampleForm.get('mname1').touched)">{{validation.message}}</mat-error>
+                                </ng-container>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Member 1 Position" class="form-control" formControlName="mpos1">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.mpos1">
+                                  <mat-error *ngIf="exampleForm.get('mpos1').hasError(validation.type) && (exampleForm.get('mpos1').dirty || exampleForm.get('mpos1').touched)">{{validation.message}}</mat-error>
+                                </ng-container>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Member 1 Contact No." class="form-control" formControlName="mno1">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.mno1">
+                                  <mat-error *ngIf="exampleForm.get('mno1').hasError(validation.type) && (exampleForm.get('mno1').dirty || exampleForm.get('mno1').touched)">{{validation.message}}</mat-error>
+                                </ng-container>
+                            </div>
+                            <div class="form-group">
+                                    <div class="btn btn-outline-success pointer"><label for="image1">Upload Member 1 Image</label></div> 
+                                    <input type="file" accept="image/*" name="image1" id='image1' class="hidden" (change)=upload1($event)>
+                            </div>
+                            <div>
+                                <p *ngIf='showprog1' style="color: orangered;">Image is being uploaded. Please wait.</p>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Member 2 Name" class="form-control" formControlName="mname2">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Member 2 Position" class="form-control" formControlName="mpos2">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Member 2 Contact No." class="form-control" formControlName="mno2">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                    <div class="btn btn-outline-success pointer"><label for="image2">Upload Member 2 Image</label></div> 
+                                    <input type="file" accept="image/*" name="image2" id='image2' class="hidden" (change)=upload2($event)>
+                            </div>
+                            <div>
+                                <p *ngIf='showprog2' style="color: orangered;">Image is being uploaded. Please wait.</p>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Member 3 Name" class="form-control" formControlName="mname3">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Member 3 Position" class="form-control" formControlName="mpos3">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Member 3 Contact No." class="form-control" formControlName="mno3">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                    <div class="btn btn-outline-success pointer"><label for="image3">Upload Member 3 Image</label></div> 
+                                    <input type="file" accept="image/*" name="image3" id='image3' class="hidden" (change)=upload3($event)>
+                            </div>
+                            <div>
+                                <p *ngIf='showprog3' style="color: orangered;">Image is being uploaded. Please wait.</p>
+                            </div>
+                            <!-- <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput type="number" placeholder="Zone Position" class="form-control" formControlName="pos">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.pos">
+                                  <mat-error *ngIf="exampleForm.get('pos').hasError(validation.type) && (exampleForm.get('pos').dirty || exampleForm.get('pos').touched)">{{validation.message}}</mat-error>
+                                </ng-container>
+                            </div> -->
+                        </div>
+                    </div>
+                  <div class="row">
+                    <div class="col-md-4 mb-3">
+                      <button mat-raised-button color="primary" type="submit" [disabled]="!exampleForm.valid">Create Zone</button>
+                    </div>
+                  </div>
+        
+                </form>
+            </div>
+            <div class="col-7">
+                 <img class="adimg" [src]="url4">
+                 <img class="adimg" [src]="url1">
+                 <img class="adimg" [src]="url2">
+                 <img class="adimg" [src]="url3">
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf='show' class="row mt-4">
+    <div class="col-12">
+        <div class="mat-elevation-z8">
+            <table style="width: 100%;" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="image">
+                    <th mat-header-cell *matHeaderCellDef> <h5>Image</h5> </th>
+                    <td mat-cell *matCellDef="let element"> <img [src]="element.payload.doc.data().imgurl" alt="ad image1" class="adimgsm"> </td>
+                </ng-container>
+                <ng-container matColumnDef="zone">
+                    <th mat-header-cell *matHeaderCellDef> <h5>Zone</h5> </th>
+                    <td mat-cell *matCellDef="let element"> {{element.payload.doc.data().name}} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef> <h5>Actions</h5> </th>
+                    <td mat-cell *matCellDef="let element"> 
+                        <button class="btn btn-outline-success mat-elevation-z8" (click)="goEdit(element.payload.doc.id)">Edit</button>&nbsp;
+                        <button class="btn btn-outline-danger mat-elevation-z8" (click)="goDelete(element.payload.doc.id)">Delete</button> 
+                    </td>
+                </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+              
+        </div>
+    </div>
+</div>
+<div *ngIf='edit' class="row mt-4">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-5 text-center heading mat-elevation-z8 coolfont"><h1>Edit Zone</h1></div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-5 planform mat-elevation-z8 pt-4">
+                <form [formGroup]="exampleForm" novalidate (ngSubmit)="updateZone(exampleForm.value)">
+                    <div class="row">
+                        <div class="col col-12">
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Zone Name" class="form-control" formControlName="name">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.name">
+                                  <mat-error *ngIf="exampleForm.get('name').hasError(validation.type) && (exampleForm.get('name').dirty || exampleForm.get('name').touched)">{{validation.message}}</mat-error>
+                                </ng-container>
+                            </div>
+                            <div class="form-group">
+                                    <div class="btn btn-outline-success pointer"><label for="image4">Upload Zone Image</label></div> 
+                                    <input type="file" accept="image/*" name="image4" id='image4' class="hidden" (change)=upload4($event)>
+                            </div>
+                            <div>
+                                <p *ngIf='showprog4' style="color: orangered;">Image is being uploaded. Please wait.</p>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Member 1 Name" class="form-control" formControlName="mname1">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.mname1">
+                                  <mat-error *ngIf="exampleForm.get('mname1').hasError(validation.type) && (exampleForm.get('mname1').dirty || exampleForm.get('mname1').touched)">{{validation.message}}</mat-error>
+                                </ng-container>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Member 1 Position" class="form-control" formControlName="mpos1">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.mpos1">
+                                  <mat-error *ngIf="exampleForm.get('mpos1').hasError(validation.type) && (exampleForm.get('mpos1').dirty || exampleForm.get('mpos1').touched)">{{validation.message}}</mat-error>
+                                </ng-container>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Member 1 Contact No." class="form-control" formControlName="mno1">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.mno1">
+                                  <mat-error *ngIf="exampleForm.get('mno1').hasError(validation.type) && (exampleForm.get('mno1').dirty || exampleForm.get('mno1').touched)">{{validation.message}}</mat-error>
+                                </ng-container>
+                            </div>
+                            <div class="form-group">
+                                    <div class="btn btn-outline-success pointer"><label for="image1">Upload Member 1 Image</label></div> 
+                                    <input type="file" accept="image/*" name="image1" id='image1' class="hidden" (change)=upload1($event)>
+                            </div>
+                            <div>
+                                <p *ngIf='showprog1' style="color: orangered;">Image is being uploaded. Please wait.</p>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Member 2 Name" class="form-control" formControlName="mname2">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Member 2 Position" class="form-control" formControlName="mpos2">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Member 2 Contact No." class="form-control" formControlName="mno2">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                    <div class="btn btn-outline-success pointer"><label for="image2">Upload Member 2 Image</label></div> 
+                                    <input type="file" accept="image/*" name="image2" id='image2' class="hidden" (change)=upload2($event)>
+                            </div>
+                            <div>
+                                <p *ngIf='showprog2' style="color: orangered;">Image is being uploaded. Please wait.</p>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Member 3 Name" class="form-control" formControlName="mname3">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Member 3 Position" class="form-control" formControlName="mpos3">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Member 3 Contact No." class="form-control" formControlName="mno3">
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                    <div class="btn btn-outline-success pointer"><label for="image3">Upload Member 3 Image</label></div> 
+                                    <input type="file" accept="image/*" name="image3" id='image3' class="hidden" (change)=upload3($event)>
+                            </div>
+                            <div>
+                                <p *ngIf='showprog3' style="color: orangered;">Image is being uploaded. Please wait.</p>
+                            </div>
+                            <!-- <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput type="number" placeholder="Zone Position" class="form-control" formControlName="pos">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.pos">
+                                  <mat-error *ngIf="exampleForm.get('pos').hasError(validation.type) && (exampleForm.get('pos').dirty || exampleForm.get('pos').touched)">{{validation.message}}</mat-error>
+                                </ng-container>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <button mat-raised-button color="primary" type="submit" [disabled]="!exampleForm.valid">Update Zone</button>
+                                </div>
+                                <div class="col-6">
+                                    <button mat-raised-button color="accent" (click)='goShow()'>Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-7">
+                 <img class="adimg" [src]="url4">
+                 <img class="adimg" [src]="url1">
+                 <img class="adimg" [src]="url2">
+                 <img class="adimg" [src]="url3">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+<div class="row justify-content-center text-center mt-3" id="printprofile">
+    <div class="col-xl-8 col-lg-9 col-md-10 col-sm-11 col-xs-12">
+        <div class="row justify-content-center">
+            <div class="col-12 mat-elevation-z8 heading">
+                <h1>{{user.displayName}}'s Profile</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 text-center mat-elevation-z8 details pt-3">
+                <img [src]="user.photoURL" class="profilepic mb-3" alt="profilepic" (click)='goFullpic()'>
+                <table class="table table-hover">
+                    <tr>
+                        <td>E-mail</td>
+                        <td>{{user.email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>{{user.displayName}}</td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>{{user.address}}</td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td>{{user.phone}}</td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth</td>
+                        <td>{{user.dob}}</td>
+                    </tr>
+                    <tr>
+                        <td>Time of Birth</td>
+                        <td>{{user.tob}}</td>
+                    </tr>
+                    <tr>
+                        <td>Place of Birth</td>
+                        <td>{{user.pob}}</td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>{{user.gender}}</td>
+                    </tr>
+                    <tr>
+                        <td>Caste</td>
+                        <td>{{user.caste}}</td>
+                    </tr>
+                    <tr>
+                        <td>Manglik/Non-Manglik</td>
+                        <td>{{user.manglik}}</td>
+                    </tr>
+                    <tr>
+                        <td>Height</td>
+                        <td>{{user.feet}} feet {{user.inch}} inches</td>
+                    </tr>
+                    <tr>
+                        <td>Complexion</td>
+                        <td>{{user.complexion}}</td>
+                    </tr>
+                    <tr>
+                        <td>Religion</td>
+                        <td>{{user.religion}}</td>
+                    </tr>
+                    <tr>
+                        <td>Educational Qualification</td>
+                        <td>{{user.equ}}</td>
+                    </tr>
+                    <tr>
+                        <td>Other Qualification</td>
+                        <td>{{user.oqu}}</td>
+                    </tr>
+                    <tr>
+                        <td>Occupation</td>
+                        <td>{{user.occupation}}</td>
+                    </tr>
+                    <tr>
+                        <td>Income</td>
+                        <td>{{user.income}}</td>
+                    </tr>
+                    <tr>
+                        <td>Present City</td>
+                        <td>{{user.city}}</td>
+                    </tr>
+                    <tr>
+                        <td>Preference of Life Partner</td>
+                        <td>{{user.polp}}</td>
+                    </tr>
+                    <tr>
+                        <td>Smoking Habit</td>
+                        <td>{{user.smoke}}</td>
+                    </tr>
+                    <tr>
+                        <td>Drinking Habit</td>
+                        <td>{{user.drink}}</td>
+                    </tr>
+                    <tr>
+                        <td>Hobbies</td>
+                        <td>{{user.hobbies}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center mt-3">
+    <div class="col-2">
+        <button [useExistingCss]="true" printSectionId="printprofile" class="btn btn-primary" ngxPrint>Print Profile</button>
+    </div>
+    <div class="col-2 ml-2">
+        <button mat-raised-button class="btn btn-primary mr-2 mb-3" (click)='goBack()'>Back</button>
+    </div>
+</div>
+

@@ -1,0 +1,121 @@
+<marquee class="mq" behavior="sliding" direction="left">
+    <p class="welcome">Welcome to Punjabi Mahasangh Jabalpur &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;पंजाबी महासंघ जबलपुर में आपका स्वागत है &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;पंजाबी महासंघ जबलपुर तुसां सारयाँ दा स्वागत करदा है &quot;जी आया नूं&quot;</p>
+</marquee>
+
+<div *ngIf='small' class="row mb-4 justify-content-center">
+  <div class="col-12">
+      <ngb-carousel [pauseOnHover]="pauseOnHover" [showNavigationArrows]='indicators' [showNavigationIndicators]='indicators'>
+          <ng-template ngbSlide *ngFor= " let image of images ">
+              <div>
+                <img [src]="image" class="bannerimg" alt="sliding-banner">
+              </div>
+          </ng-template>
+      </ngb-carousel>
+  </div>
+  <div class="row mt-4 justify-content-around">
+    <div class="col-4 text-center" *ngFor='let image of images2'>
+      <img class="smtallad" [src]="image" alt="tall ad">
+    </div>
+  </div>
+</div>
+
+<div *ngIf='!small' class="row mb-4">
+    <div class="col-10">
+        <ngb-carousel [pauseOnHover]="pauseOnHover" [showNavigationArrows]='indicators' [showNavigationIndicators]='indicators'>
+            <ng-template ngbSlide *ngFor= " let image of images ">
+                <div>
+                  <img [src]="image" class="bannerimg" alt="sliding-banner">
+                </div>
+            </ng-template>
+        </ngb-carousel>
+    </div>
+    <div class="col-2">
+      <ngb-carousel pauseOnHover='true' showNavigationArrows='true' [showNavigationIndicators]='indicators'>
+          <ng-template ngbSlide *ngFor= " let image of images2 ">
+              <div>
+                <img [src]="image" class="bannerimg" alt="sliding-banner">
+              </div>
+          </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+
+<div class="row justify-content-center">
+    <div class="col-md-9 col-sm-10 col-xs-12">
+        <!-- main area -->
+        <div class="row text-center justify-content-around">
+            <div class="col-lg-5 mb-3" (click)='goNews()'>
+              <div class="row justify-content-center">
+                <div class="col-8 narrowheading">
+                  <h5>LATEST NEWS</h5>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 customcard mat-elevation-z8">
+                  <p class="cardcontents" *ngFor='let ln of lnews'>{{ln}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 mb-3" (click)='goNews()'>
+              <div class="row justify-content-center">
+                <div class="col-8 narrowheading">
+                  <h5>UPCOMING EVENTS</h5>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 customcard mat-elevation-z8">
+                  <p class="cardcontents" *ngFor='let le of levents'>{{le}}</p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row text-center justify-content-around">
+            <div class="col-lg-5 mb-3" (click)='goActivities()'>
+              <div class="row justify-content-center">
+                <div class="col-8 narrowheading">
+                  <h5>ACTIVITIES</h5>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 customcard mat-elevation-z8">
+                  <p class="cardcontents" *ngFor='let ac of lacts'>{{ac}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 mb-3" (click)='goKkvak()'>
+              <div class="row justify-content-center">
+                <div class="col-9 narrowheading">
+                  <h5>KARYAKARNI VAKTAVYA</h5>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 customcard mat-elevation-z8">
+                  <p class="cardcontents" *ngFor='let ac of lvacs'>{{ac}}</p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-9 com-sm-11 col-xs-12 text-center starchild">
+        <!-- ads area -->
+        <div class="mb-3" *ngFor= " let ad of centerads ">
+                <ngb-carousel pauseOnHover='true' [showNavigationArrows]='arrows' [showNavigationIndicators]='ind'>
+                    <ng-template ngbSlide>
+                        <div>
+                          <img [src]="ad['imgurl1']" class="adimgfoo mr-2" alt="sliding-ad">
+                        </div>
+                    </ng-template>
+                    <ng-template ngbSlide>
+                        <div>
+                          <img [src]="ad['imgurl2']" class="adimgfoo mr-2" alt="sliding-ad">
+                        </div>
+                    </ng-template>
+                    <ng-template ngbSlide>
+                        <div>
+                          <img [src]="ad['imgurl3']" class="adimgfoo mr-2" alt="sliding-ad">
+                        </div>
+                    </ng-template>
+                  </ngb-carousel>
+        </div>
+    </div>
+</div>

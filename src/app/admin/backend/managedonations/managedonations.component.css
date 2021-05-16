@@ -1,0 +1,11 @@
+#newsimg{
+    height:300px;
+    width: 400px;
+}
+.hidden{
+    display: none;
+}
+.newsimgsm{
+    height:90px;
+    width:120px;
+}

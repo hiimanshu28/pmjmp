@@ -1,0 +1,38 @@
+<div class="row justify-content-around">
+    <div class="col-lg-3 col-md-4 col-sm-10 text-center zone heading">
+        <h1 class="text-center">{{act['name']}}</h1>
+        <img [src]="act['imgurl']" alt="" class="newsimg">
+    </div>
+    <div class="col-lg-6 col-md-8 col-sm-10 mt-3 text-center memb">
+        <div class="row">
+            <div class="col-12 nopad">
+                <h3 class="heading">Members</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img [src]="act['murl1']" alt="" class="newsimg">
+                <h4 class="text-center">{{act['mname1']}}</h4>
+                <h6 class="text-center">{{act['mpos1']}}</h6>
+                <h6 *ngIf="act['mno1']" class="text-center"><mat-icon class="ico">call</mat-icon>{{act['mno1']}}</h6>
+            </div>
+            <div class="col-4">
+                <img [src]="act['murl2']" alt="" class="newsimg">
+                <h4 class="text-center">{{act['mname2']}}</h4>
+                <h6 class="text-center">{{act['mpos2']}}</h6>
+                <h6 *ngIf="act['mno2']" class="text-center"><mat-icon class="ico">call</mat-icon>{{act['mno2']}}</h6>
+            </div>
+            <div class="col-4">
+                <img [src]="act['murl3']" alt="" class="newsimg">
+                <h4 class="text-center">{{act['mname3']}}</h4>
+                <h6 class="text-center">{{act['mpos3']}}</h6>
+                <h6 *ngIf="act['mno3']" class="text-center"><mat-icon class="ico">call</mat-icon>{{act['mno3']}}</h6>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+</div>
+<div class="row justify-content-center mt-3">
+    <button class='btn btn-outline-primary' (click)='goNews()'>Go Back</button>
+</div>

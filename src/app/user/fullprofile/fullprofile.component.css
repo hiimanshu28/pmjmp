@@ -1,0 +1,27 @@
+.profilepic{
+    height: 200px;
+    width: 200px;
+    border:1px solid black;
+    cursor: pointer;
+}
+.heading{
+    background-color: #D86D35;
+    color: white;
+}
+table {
+    width: 100%;
+}
+.tablewidth{
+    min-width: 600px;
+    text-align: left;
+}
+.userimgsm{
+    height:80px;
+    width: 80px;
+}
+.unlockbtn{
+    font-size: 2rem;
+}
+td{
+    font-size: 1.4rem;
+}

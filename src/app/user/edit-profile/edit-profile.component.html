@@ -1,0 +1,255 @@
+<div class="row justify-content-center mt-3">
+    <div class="col-xl-6 col-lg-8 col-md-10 col-sm-12 text-center heading mat-elevation-z8">
+        <h4>Edit User Profile</h4>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-xl-6 col-lg-8 col-md-10 col-sm-12 mat-elevation-z8">
+        <form class="planform text-center" [formGroup]="exampleForm" novalidate (ngSubmit)="updateProfile(exampleForm.value)">
+            <div class="row justify-content-center mt-3">
+                <div class="col-4 text-center profileImg">
+                    <label for="image" class="imgtext">
+                        <img *ngIf='imgUploaded' [src]="url" class="profilepic" alt="profilepic">
+                        <p *ngIf='!imgUploaded' class="imgtext">Upload Profile Picture</p>
+                    </label>
+                </div>
+            </div>
+            <div *ngIf='showprog' class="row justify-content-center">
+                <div>
+                    <p style="color: orangered;">Image is being uploaded. Please wait.</p>
+                </div>
+            </div>
+            <div class="row hidden">
+                <div class="col-12">
+                        <input type="file" accept="image/*" name="image" id='image' (change)=upload($event)>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field>
+                        <input matInput placeholder="Full Name" class="form-control" formControlName="displayName">
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.displayName">
+                        <mat-error *ngIf="exampleForm.get('displayName').hasError(validation.type) && (exampleForm.get('displayName').dirty || exampleForm.get('displayName').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field style="width: 80%;">
+                        <textarea matInput placeholder="Permanent Address" class="form-control" formControlName="address"></textarea>
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.address">
+                        <mat-error *ngIf="exampleForm.get('address').hasError(validation.type) && (exampleForm.get('address').dirty || exampleForm.get('address').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field>
+                        <input matInput type="number" placeholder="Phone Number" class="form-control" formControlName="phone">
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.phone">
+                        <mat-error *ngIf="exampleForm.get('phone').hasError(validation.type) && (exampleForm.get('phone').dirty || exampleForm.get('phone').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field style="width: 100%;">
+                        <input matInput formControlName='dob' placeholder="Date of Birth [dd/mm/yyyy]">
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.dob">
+                        <mat-error *ngIf="exampleForm.get('dob').hasError(validation.type) && (exampleForm.get('dob').dirty || exampleForm.get('dob').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field>
+                        <input matInput placeholder="Time of Birth (in 24 Hrs clock)" class="form-control" formControlName="tob">
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.tob">
+                        <mat-error *ngIf="exampleForm.get('tob').hasError(validation.type) && (exampleForm.get('tob').dirty || exampleForm.get('tob').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field>
+                        <input matInput placeholder="Place of Birth" class="form-control" formControlName="pob">
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.pob">
+                        <mat-error *ngIf="exampleForm.get('pob').hasError(validation.type) && (exampleForm.get('pob').dirty || exampleForm.get('pob').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field>
+                        <!-- <input matInput type="text" placeholder="Category" class="form-control" formControlName="category"> -->
+                        <mat-label>Gender</mat-label>
+                        <mat-select formControlName="gender">
+                            <mat-option *ngFor="let gender of genders" [value]="gender" >
+                                {{gender}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.gender">
+                        <mat-error *ngIf="exampleForm.get('gender').hasError(validation.type) && (exampleForm.get('gender').dirty || exampleForm.get('gender').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field>
+                        <input matInput placeholder="Caste & Gotra" class="form-control" formControlName="caste">
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.caste">
+                        <mat-error *ngIf="exampleForm.get('caste').hasError(validation.type) && (exampleForm.get('caste').dirty || exampleForm.get('caste').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field>
+                        <input matInput placeholder="Manglik/NonManglik" class="form-control" formControlName="manglik">
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.manglik">
+                        <mat-error *ngIf="exampleForm.get('manglik').hasError(validation.type) && (exampleForm.get('manglik').dirty || exampleForm.get('manglik').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="formstyl heightstyl">
+                        <p>Height</p>
+                        <mat-form-field>
+                            <input matInput type="number" placeholder="Feet" class="form-control" formControlName="feet">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput type="number" placeholder="Inch" class="form-control" formControlName="inch">
+                        </mat-form-field>
+                    </div>
+
+                    <ng-container *ngFor="let validation of validation_messages.height">
+                        <mat-error *ngIf="exampleForm.get('feet').hasError(validation.type) && (exampleForm.get('feet').dirty || exampleForm.get('feet').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field>
+                        <input matInput placeholder="Complextion" class="form-control" formControlName="complexion">
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.complexion">
+                        <mat-error *ngIf="exampleForm.get('complexion').hasError(validation.type) && (exampleForm.get('complexion').dirty || exampleForm.get('complexion').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field>
+                        <input matInput placeholder="Religion" class="form-control" formControlName="religion">
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.religion">
+                        <mat-error *ngIf="exampleForm.get('religion').hasError(validation.type) && (exampleForm.get('religion').dirty || exampleForm.get('religion').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field>
+                        <input matInput placeholder="Educational Qualification" class="form-control" formControlName="equ">
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.equ">
+                        <mat-error *ngIf="exampleForm.get('equ').hasError(validation.type) && (exampleForm.get('equ').dirty || exampleForm.get('equ').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field>
+                        <input matInput placeholder="Other Qualification" class="form-control" formControlName="oqu">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field>
+                        <input matInput placeholder="Occupation" class="form-control" formControlName="occupation">
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.occupation">
+                        <mat-error *ngIf="exampleForm.get('occupation').hasError(validation.type) && (exampleForm.get('occupation').dirty || exampleForm.get('occupation').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field>
+                        <input matInput placeholder="Income (Rs)" class="form-control" formControlName="income">
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.income">
+                        <mat-error *ngIf="exampleForm.get('income').hasError(validation.type) && (exampleForm.get('income').dirty || exampleForm.get('income').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field>
+                        <input matInput placeholder="Residing City" class="form-control" formControlName="city">
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.city">
+                        <mat-error *ngIf="exampleForm.get('city').hasError(validation.type) && (exampleForm.get('city').dirty || exampleForm.get('city').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field style="width: 100%;">
+                        <textarea matInput placeholder="Preference of Life Partner (Service/Business)" class="form-control" formControlName="polp"></textarea>
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.polp">
+                        <mat-error *ngIf="exampleForm.get('polp').hasError(validation.type) && (exampleForm.get('polp').dirty || exampleForm.get('polp').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field>
+                        <input matInput placeholder="Do you Smoke?" class="form-control" formControlName="smoke">
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.smoke">
+                        <mat-error *ngIf="exampleForm.get('smoke').hasError(validation.type) && (exampleForm.get('smoke').dirty || exampleForm.get('smoke').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field>
+                        <input matInput placeholder="Do you Drink?" class="form-control" formControlName="drink">
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.drink">
+                        <mat-error *ngIf="exampleForm.get('drink').hasError(validation.type) && (exampleForm.get('drink').dirty || exampleForm.get('drink').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field style="width: 100%;">
+                        <textarea matInput placeholder="Hobbies" class="form-control" formControlName="hobbies"></textarea>
+                    </mat-form-field>
+                    <ng-container *ngFor="let validation of validation_messages.hobbies">
+                        <mat-error *ngIf="exampleForm.get('hobbies').hasError(validation.type) && (exampleForm.get('hobbies').dirty || exampleForm.get('hobbies').touched)">{{validation.message}}</mat-error>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12">
+                    <button mat-raised-button class="signup btn btn-outline-success mr-2" type="submit" [disabled]="!exampleForm.valid">Update Profile</button>
+                    <button mat-raised-button class="btn btn-outline-danger" (click)='goBack()' >Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

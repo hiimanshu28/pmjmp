@@ -1,0 +1,149 @@
+$text-primary : #C53A01;
+$text-secondary : #D86D35;
+$text-tert: #00ACE8;
+$bg-primary : white;
+$bg-secondary : #FF8B00;
+
+.toptext{
+    margin-left: -7%;
+}
+.menubar{
+    width:100%;
+}
+.brandbar{
+    background-color: $text-secondary;
+}
+.navibar{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #0076C0;
+    border-top: 5px solid white;
+}
+.social{
+    height: 40px;
+    width:40px;
+    border-radius: 100%;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+.adimgfoo{
+    height: 200px;
+    width:300px;
+}
+.buttons{
+    height: 100%;   
+}
+.brandlogo{
+    display: flex;
+    align-items: center;
+}
+#logoimg{
+    max-height: 117px;
+}
+#logoimgs{
+  max-height: 72px;
+  width: 150;
+}
+.nopad{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.menubtn{
+    color: white;
+}
+.topmenu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bluebtn{
+    color: white;
+    background-color: #0076C0;
+    border: 1px solid white;
+    height: 100%;
+    transition: 200ms ease;
+  }
+  
+  .bluebtns{
+    color: white;
+    background-color: #0076C0;
+    border: 1px solid white;
+    width: 120px;
+    transition: 200ms ease;
+  }
+  .bluebtn:hover{
+    color:#0076C0;
+    background-color: white;
+  }
+  .bluebtns:hover{
+    color:#0076C0;
+    background-color: white;
+  }
+.brand{
+    display: flex;
+    align-items: center;
+}
+
+.main{
+    background-color: $bg-primary;
+}
+.maincontent{
+    margin-bottom: 1.3rem;
+}
+
+p{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.headerdiv{
+    display: inline-block;
+}
+.brandnamesm{
+    display: block;
+    margin-left: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    color:white;
+    &:hover{
+        cursor: default;
+    }
+}
+.brandnamebig{
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color:white;
+    &:hover{
+        cursor: default;
+    }
+}
+.regtext{
+    display: block;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: bold;
+}
+.regtextsm{
+    display: block;
+    font-size: 0.7rem;
+    margin-left: 4px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.foobar{
+    background-color: $text-secondary;
+    color: $bg-primary;
+    a{
+        color: $bg-primary
+    }
+}
+.starchild{
+    .carousel .slide .ng-star-inserted{
+        display: inline-block;
+        width:300px !important;
+    }
+}

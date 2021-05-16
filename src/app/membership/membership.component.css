@@ -1,0 +1,38 @@
+h3{
+    margin:0;
+}
+h5{
+    background-color: rgb(254, 0, 0);
+    color: white;
+    border-radius: 50px;
+    margin-top: 1.5rem;
+}
+.membership{
+    background-color: #D86D35;
+    color: white;
+    border-radius: 4px;
+}
+.heading{
+    text-shadow: 2px 2px 12px black;
+}
+.bronze{
+    background-image: url(../../assets/bronze.jpg);
+    color: rgb(255, 236, 128);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+.silver{
+    background-image: url(../../assets/silver.jpg);
+    color: rgb(38, 42, 68);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+.gold{
+    background-image: url(../../assets/gold.jpg);
+    color: rgb(112, 77, 0);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}

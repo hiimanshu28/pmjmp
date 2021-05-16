@@ -1,0 +1,15 @@
+.newsimgsm{
+    max-width: 200px;
+    max-height: 150px;
+}
+.newshover{
+    padding-top: 1rem;
+    cursor: pointer;
+}
+.newshover:hover{
+    background-color: #FF8B00;
+    color: white;
+}
+.heading{
+    margin-bottom: 0;
+}

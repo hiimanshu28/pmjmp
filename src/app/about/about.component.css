@@ -1,0 +1,26 @@
+
+.members{
+    max-height:200px;
+}
+.example-card{
+    width: 340px;
+}
+.inl{
+    /* margin-bottom: -5px; */
+    display: inline;
+    font-size: 1rem;
+}
+.ico{
+    font-size: 1rem;
+}
+.whitetext{
+    color:white;
+}
+.orangebar{
+    background-color: #D86D35;
+}
+.memberblock{
+    border:1px solid #D86D35;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}

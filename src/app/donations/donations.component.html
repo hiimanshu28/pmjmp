@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-12 pt-2 text-center">
+        <mat-grid-list [cols]="cols" rowHeight='500px'>
+            <mat-grid-tile *ngFor='let donator of donators' colspan='1' rowspan='1'>
+                <div class="memberblock text-center mat-elevation-z8">
+                    <img class="members mat-elevation-z8" [src]="donator.payload.doc.data().imgurl" alt="donator image">
+                    <h3>{{donator.payload.doc.data().name}}</h3>
+                    <h6>{{donator.payload.doc.data().address}}</h6>
+                    <h6>{{donator.payload.doc.data().description}}</h6>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <button mat-raised-button class="btn btn-outline-success mat-elevation-z8 bigdonate" (click)='goDonate()'>Make a Donation</button>
+    </div>
+</div>

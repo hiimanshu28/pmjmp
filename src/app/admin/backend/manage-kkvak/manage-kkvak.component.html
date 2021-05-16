@@ -1,0 +1,208 @@
+<div class="row justify-content-center mt-3 mb-3">
+    <div class="col-12 text-center">
+      <h4>Manage Karyakarni Vaktavya</h4>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-3">
+        <button mat-raised-button (click)='goVideo()'>Add New Video</button>
+    </div>
+    <div class="col-3">
+        <button mat-raised-button (click)='goCreate()'>Create New Vaktavya</button>
+    </div>
+    <div class="col-3">
+        <button mat-raised-button (click)='goShow()'>View All</button>
+    </div>
+</div>
+<div *ngIf='create' class="row mt-4">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-7 text-center heading mat-elevation-z8 coolfont"><h1>Create Vaktavya</h1></div>
+        </div>
+        <div class="row">
+            <div class="col-7 planform mat-elevation-z8">
+                <form [formGroup]="exampleForm" novalidate (ngSubmit)="createKkvak(exampleForm.value)">
+                    <div class="row">
+                        <div class="col col-12">
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Title" class="form-control" formControlName="title">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.title">
+                                  <mat-error *ngIf="exampleForm.get('title').hasError(validation.type) && (exampleForm.get('title').dirty || exampleForm.get('title').touched)">{{validation.message}}</mat-error>
+                                </ng-container>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field style="width: 100%;">
+                                  <textarea matInput placeholder="Paragraph 1" class="form-control" formControlName="para1"></textarea>
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.para1">
+                                  <mat-error *ngIf="exampleForm.get('para1').hasError(validation.type) && (exampleForm.get('para1').dirty || exampleForm.get('para1').touched)">{{validation.message}}</mat-error>
+                                </ng-container>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field style="width: 100%;">
+                                  <textarea matInput placeholder="Paragraph 2 (optional)" class="form-control" formControlName="para2"></textarea>
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field style="width: 100%;">
+                                  <textarea matInput placeholder="Paragraph 3 (optional)" class="form-control" formControlName="para3"></textarea>
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Author" class="form-control" formControlName="author">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.author">
+                                  <mat-error *ngIf="exampleForm.get('author').hasError(validation.type) && (exampleForm.get('author').dirty || exampleForm.get('author').touched)">{{validation.message}}</mat-error>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <button mat-raised-button color="primary" type="submit" [disabled]="!exampleForm.valid">Create</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf='show' class="row mt-4">
+    <div class="col-12">
+        <div class="mat-elevation-z8">
+            <table style="width: 100%;" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="title">
+                  <th mat-header-cell *matHeaderCellDef> <h5>Title</h5> </th>
+                  <td mat-cell *matCellDef="let element"> {{element.payload.doc.data().title}} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef> <h5>Actions</h5> </th>
+                    <td mat-cell *matCellDef="let element"> 
+                        <button class="btn btn-outline-success mat-elevation-z8" (click)="goEdit(element.payload.doc.id)">Edit</button>&nbsp;
+                        <button class="btn btn-outline-danger mat-elevation-z8" (click)="goDelete(element.payload.doc.id)">Delete</button> 
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator #vak [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+    </div>
+    <div class="col-12 mt-3">
+        <div class="mat-elevation-z8">
+            <table style="width: 100%;" mat-table [dataSource]="dataSource2" class="mat-elevation-z8">
+                <ng-container matColumnDef="blank">
+                  <th mat-header-cell *matHeaderCellDef> <h5>&nbsp;&nbsp;</h5> </th>
+                  <td mat-cell *matCellDef="let element"> &nbsp;&nbsp; </td>
+                </ng-container>
+                <ng-container matColumnDef="image">
+                  <th mat-header-cell *matHeaderCellDef> <h5>Video</h5> </th>
+                  <td mat-cell *matCellDef="let element"> 
+                      <iframe class="videos" [src]="element.payload.doc.data().vidurl | safe" allowfullscreen></iframe>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef> <h5> </h5> </th>
+                    <td mat-cell *matCellDef="let element"> 
+                        <button class="btn btn-outline-danger mat-elevation-z8" (click)="goDeleteVid(element.payload.doc.id)">Delete</button> 
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+            </table>
+            <mat-paginator #vid [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+    </div>
+</div>
+<div *ngIf='edit' class="row mt-4">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-7 text-center heading mat-elevation-z8 coolfont"><h1>Edit Vaktavya</h1></div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-7 planform mat-elevation-z8">
+                <form [formGroup]="exampleForm" novalidate (ngSubmit)="updateKkvak(exampleForm.value)">
+                    <div class="row">
+                        <div class="col col-12">
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Title" class="form-control" formControlName="title">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.title">
+                                  <mat-error *ngIf="exampleForm.get('title').hasError(validation.type) && (exampleForm.get('title').dirty || exampleForm.get('title').touched)">{{validation.message}}</mat-error>
+                                </ng-container>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field style="width: 100%;">
+                                  <textarea matInput placeholder="Paragraph 1" class="form-control" formControlName="para1"></textarea>
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.para1">
+                                  <mat-error *ngIf="exampleForm.get('para1').hasError(validation.type) && (exampleForm.get('para1').dirty || exampleForm.get('para1').touched)">{{validation.message}}</mat-error>
+                                </ng-container>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field style="width: 100%;">
+                                  <textarea matInput placeholder="Paragraph 2 (optional)" class="form-control" formControlName="para2"></textarea>
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field style="width: 100%;">
+                                  <textarea matInput placeholder="Paragraph 3 (optional)" class="form-control" formControlName="para3"></textarea>
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field>
+                                  <input matInput placeholder="Author" class="form-control" formControlName="author">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.author">
+                                  <mat-error *ngIf="exampleForm.get('author').hasError(validation.type) && (exampleForm.get('author').dirty || exampleForm.get('author').touched)">{{validation.message}}</mat-error>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <button mat-raised-button color="primary" type="submit" [disabled]="!exampleForm.valid">Update</button>
+                        </div>
+                        <div class="col-6">
+                            <button mat-raised-button color="accent" (click)='goShow()'>Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf='video' class="row mt-4">
+    <div class="col-12">
+        <div class="row mt-4">
+            <div class="col-12 text-center heading mat-elevation-z8 coolfont"><h1>Add Vaktavya Video</h1></div>
+        </div>
+        <div class="row pt-4">
+            <div class="col-12 planform mat-elevation-z8">
+                <form [formGroup]="exampleForm2" novalidate (ngSubmit)="addVideo(exampleForm2.value)">
+                    <div class="row justify-content-center">
+                        <div class="col-xs-12 col-sm-10 col-md-9 col-lg-7 col-xl-6">
+                            <div class="form-group">
+                                <mat-form-field style="width: 100%;">
+                                    <input matInput placeholder="Enter Youtube Video URL" class="form-control" formControlName="vidurl">
+                                  </mat-form-field>
+                                  <ng-container *ngFor="let validation of validation_messages2.vidurl">
+                                    <mat-error *ngIf="exampleForm2.get('vidurl').hasError(validation.type) && (exampleForm2.get('vidurl').dirty || exampleForm2.get('vidurl').touched)">{{validation.message}}</mat-error>
+                                  </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center mb-3">
+                            <button mat-raised-button color="primary" type="submit" [disabled]="!exampleForm2.valid">Add Video</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

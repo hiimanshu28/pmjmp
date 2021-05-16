@@ -1,0 +1,10 @@
+button{
+    width: 100%;
+    background-color: blueviolet;
+    color: white;
+    margin-top: 1rem;
+    transition: 500ms ease;
+    &:hover{
+        background-color: #e4714e;
+    }
+}

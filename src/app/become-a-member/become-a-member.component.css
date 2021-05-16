@@ -1,0 +1,33 @@
+label,input{
+    display: inline-block;
+}
+p{
+    margin:0;
+    padding:0;
+}
+.flb{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profilepic{
+    height: 200px;
+    width: 200px;
+}
+.profileImg{
+    display: flex;
+    padding: 0;
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    align-items: center;
+    cursor: pointer;
+}
+.imgtext{
+    width:100%;
+    cursor: pointer;
+    text-align: center;
+}
+.hidden{
+    display:none;
+}

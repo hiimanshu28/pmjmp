@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-md-5 col-sm-8 col-xs-12">
+        <h3 style="border-bottom: 2px solid black;">Contact Us</h3>
+        <p><mat-icon style=" font-size: 20px;">place</mat-icon><b>Office 1: </b>Pradhan Karyalay 72, Gurudev Colony, Bedi Nagar, Jabalpur</p><br>
+        <p><mat-icon style=" font-size: 20px;">place</mat-icon><b>Office 2: </b>Shop 54, Wright Town Stadium Market, Opp. Ashok Hotel, Jabalpur</p>      
+      </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-5 col-sm-8 col-xs-12">
+        <h3 style="border-bottom: 2px solid black;">Get in touch with us</h3>
+        <form class="planform" [formGroup]="exampleForm" novalidate (ngSubmit)="goSubmit(exampleForm.value)">
+          <div class="row mb-2">
+            <div class="col-12">
+              <input placeholder="E-mail" class="form-control" formControlName="uname">
+            </div>
+          </div>
+          <div class="row mb-2">
+              <div class="col-12">
+                  <input placeholder="Phone Number" type="number" class="form-control" formControlName="phn">
+              </div>
+          </div>
+          <div class="row mb-2">
+              <div class="col-12">
+                    <textarea placeholder="Leave a Message" type="text" class="form-control" formControlName="message"></textarea>
+              </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-12">
+              <button mat-raised-button class="signin" type="submit" [disabled]="!exampleForm.valid">Send</button>
+            </div>
+          </div>
+      </form>
+    </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-5 col-sm-8 col-xs-12 text-center">
+    <h3 style="border-bottom: 2px solid black;text-align: left;">Connect with us on:</h3>
+    <img (click)='goInsta()' class="social" src="../../assets/ilogo.png" alt="instagram">
+    <img (click)='goFb()' class="social" src="../../assets/flogo.png" alt="facebook">
+    <img (click)='goTwit()' class="social" src="../../assets/tlogo.png" alt="twitter">
+  </div>
+</div>  

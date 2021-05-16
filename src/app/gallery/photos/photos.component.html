@@ -1,0 +1,19 @@
+<div class="row mat-elevation-z8">
+    <div class="col-12 pt-2" style="background-color: #D86D35; color: white;">
+        <h1 class="text-center">PHOTOS</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <mat-grid-list [cols]="cols" rowHeight='320px'>
+            <mat-grid-tile *ngFor='let photo of photos' colspan='1' rowspan='1'>
+                <mat-card class="picbackground">
+                    <mat-card-content (click)='enLarge(photo.payload.doc.data().imgurl)'>
+                        <h4 style="color: white;">{{photo.payload.doc.data().title}}</h4>
+                        <img class="photos mat-elevation-z8" [src]="photo.payload.doc.data().imgurl" alt="photo">
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

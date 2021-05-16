@@ -1,0 +1,30 @@
+.newsimg{
+    max-width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+}
+.ico{
+    font-size: 1rem;
+}
+.zone{
+    border: 1px solid black;
+    border-radius: 20px;
+}
+.memb{
+    border: 1px solid black;
+    border-radius: 20px;
+}
+.mem{
+    display: flex;
+    align-items: center;
+}
+.heading{
+    background-color: #FF8B00;
+    color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+.nopad{
+    padding-left: 0px;
+    padding-right: 0px;
+}

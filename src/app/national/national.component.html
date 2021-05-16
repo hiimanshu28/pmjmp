@@ -1,0 +1,20 @@
+<div class="row mat-elevation-z8 mt-3">
+    <div class="col-12 pt-2" style="background-color: #D86D35; color: white;">
+        <h1 class="text-center">OUR NATIONAL BODY</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 mt-3 pt-2">
+        <mat-grid-list [cols]="cols" rowHeight='430px'>
+            <mat-grid-tile *ngFor='let member of Nationals' colspan='1' rowspan='1'>
+                <div class="example-card text-center mat-elevation-z8">
+                    <img class="members" [src]="member.payload.doc.data().imgurl" alt="member image">
+                    <h3 class="text-center">{{member.payload.doc.data().name}}</h3>
+                    <h6 class="text-center">{{member.payload.doc.data().position}}</h6>
+                    <mat-icon *ngIf="member.payload.doc.data().contact" class="ico">call</mat-icon><p class="text-center inl">{{member.payload.doc.data().contact}}</p>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

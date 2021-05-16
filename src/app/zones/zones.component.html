@@ -1,0 +1,19 @@
+<div class="row mat-elevation-z8">
+    <div class="col-12 pt-2" style="background-color: #D86D35; color: white;">
+        <h1 class="text-center">ZONES</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 pt-3">
+        <mat-grid-list [cols]="cols" rowHeight='310px'>
+            <mat-grid-tile *ngFor='let zone of zones' colspan='1' rowspan='1'>
+                <mat-card class="zones mat-elevation-z8" (click)='goFullZone(zone.payload.doc.id)'>
+                    <mat-card-content>
+                        <h3 class="text-center heading">{{zone.payload.doc.data().name}}</h3>
+                        <img class="photos mat-elevation-z8" [src]="zone.payload.doc.data().imgurl" alt="zone">
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+
+.memberblock{
+    padding: 1rem 1rem 0 1rem;
+    background-color: #D86D35;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+.members{
+    max-height:200px;
+    border-radius: 5px;
+}
+.bigdonate{
+    height: 5rem;
+    width: 20rem;
+    border:4px solid#0076C0;
+    color: #0076C0;
+    font-size: 2rem;
+}
+.bigdonate:hover{
+    background-color:#0076C0;
+    color: white;
+}

@@ -1,0 +1,7 @@
+.social{
+    height: 120px;
+    width:120px;
+    border-radius: 100%;
+    cursor: pointer;
+    margin-right: 1rem;
+}
